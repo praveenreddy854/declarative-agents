@@ -1,0 +1,10 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.4/schema.json",
+  "schema_version": "v2.4",
+  "name_for_human": "Budget planner",
+  "description_for_human": "Budget planner${{APP_NAME_SUFFIX}}",
+  "contact_email": "publisher-email@example.com",
+  "namespace": "budgetplanner",
+  "functions": [],
+  "runtimes": []
+}

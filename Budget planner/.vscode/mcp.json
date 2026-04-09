@@ -1,0 +1,8 @@
+{
+  "servers": {
+    "desktopsop": {
+      "type": "http",
+      "url": " https://desktops-open-zope-infants.trycloudflare.com"
+    }
+  }
+}
