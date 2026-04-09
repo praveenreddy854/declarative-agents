@@ -1,0 +1,33 @@
+{
+  "name": "zava-insurance-mcp-server",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "MCP App server for Zava Insurance claims management with interactive widgets",
+  "scripts": {
+    "build:widgets": "cross-env INPUT=widgets/claims-dashboard.html vite build && cross-env INPUT=widgets/claim-detail.html vite build && cross-env INPUT=widgets/contractors-list.html vite build",
+    "build:server": "tsc -p tsconfig.server.json",
+    "build": "npm run build:widgets && npm run build:server",
+    "watch:widgets": "concurrently \"cross-env INPUT=widgets/claims-dashboard.html vite build --watch\" \"cross-env INPUT=widgets/claim-detail.html vite build --watch\" \"cross-env INPUT=widgets/contractors-list.html vite build --watch\"",
+    "serve": "tsx --watch main.ts",
+    "dev": "cross-env NODE_ENV=development concurrently \"npm run watch:widgets\" \"npm run serve\"",
+    "start": "cross-env NODE_ENV=development npm run build && npm run serve"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/ext-apps": "^1.5.0",
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.5.2",
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.1.0",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2",
+    "vite": "^5.4.21",
+    "vite-plugin-singlefile": "^2.3.2"
+  }
+}
